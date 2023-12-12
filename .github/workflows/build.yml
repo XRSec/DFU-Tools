@@ -1,0 +1,83 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  macvdmtool:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        arch: [ amd64, arm64 ]
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Build MacVDMTool
+        run: |
+          cd macvdmtool
+          make
+          cc -o dfuTools_${{ matrix.arch }} main.o -framework CoreFoundation -framework IOKit -lc++
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: dfuTools_${{ matrix.arch }}
+          path: macvdmtool/dfuTools_${{ matrix.arch }}
+          retention-days: 5
+  build:
+    needs: macvdmtool
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Download Artifact (arm64)
+        uses: actions/download-artifact@v3
+        with:
+          name: dfuTools_arm64
+          path: electron/dfuTools_arm64
+
+      - name: Download Artifact (amd64)
+        uses: actions/download-artifact@v3
+        with:
+          name: dfuTools_amd64
+          path: electron/dfuTools_x64
+
+      - name: Build Release Files
+        run: npm run pack
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+
+      -
+        name: Delete old Releases
+        uses: dev-drprasad/delete-older-releases@v0.3.2
+        with:
+          repo: ${{ github.repository }}
+          keep_latest: 3
+          delete_tag_pattern: ""
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+
+      - name: 获取版本号
+        id: get-version
+        run: |
+          echo "version=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
+
+      -
+        name: Make release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "release/**/*.dmg"
+          body: "Update ${{ steps.get-version.outputs.version }}"
+          name: ${{ steps.get-version.outputs.version }}
+          tag_name: ${{ steps.get-version.outputs.version }}
+          draft: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}

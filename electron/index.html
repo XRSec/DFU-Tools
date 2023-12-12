@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
+
+    <title class="title"></title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .language-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #e0e0e0;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .button-container {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            width: 80%;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 10px;
+            margin: 0 20px 10px 20px;
+        }
+
+        .button {
+            width: 100%;
+            height: 50px;
+            cursor: pointer;
+            background: #e0e0e0;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 14px 14px 29px #bebebe, -14px -14px 29px #ffffff;
+            transition: transform 0.1s; /* 添加过渡效果 */
+        }
+
+        .button:active {
+            transform: translateY(10px); /* 向下压 */
+        }
+
+        .reward {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .reward img {
+            width: 250px;
+            height: auto;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer span {
+            font-weight: bold;
+            color: orange;
+        }
+
+        .footer div {
+            display: inline-block; /* 或者使用 display: inline; */
+            margin-right: 10px; /* 可以根据需要调整间距 */
+            color: #1ea0ff;
+        }
+    </style>
+    <script>
+        const {ipcRenderer} = require('electron');
+        const dictionary = {
+            'zh-CN': {
+                'title': '苹果电脑 刷机助手',
+                'restart': '重启',
+                'dfu': 'DFU',
+                'ipsw': '镜像文件',
+                'bypassMdm': '绕过监管',
+                'author': '作者',
+                'wechat': '微信',
+                'email': '邮箱',
+                "language-button": 'Toggle Language',
+                "run_error": '运行错误',
+                "configurator_not_running": 'Apple Configurator 未运行',
+                "close": '关闭',
+                "msg": "提示",
+                "none": "无内容",
+            },
+            'en': {
+                'title': 'Apple Flashing Assistant',
+                'restart': 'Restart',
+                'dfu': 'DFU',
+                'ipsw': 'Image File',
+                'bypassMdm': 'Bypass MDM',
+                'author': 'Author',
+                'wechat': 'WeChat',
+                'email': 'Email',
+                "language-button": '切换语言',
+                "run_error": '运行错误',
+                "configurator_not_running": 'Apple Configurator 未运行',
+                "close": 'Close',
+                "msg": "Message",
+                "none": "None",
+            }
+        };
+        let isButtonEnabled = true;
+
+        function showAlert(text) {
+            // 创建一个 div 元素作为模拟的 alert
+            const alertDiv = document.createElement('div');
+            alertDiv.style.position = 'fixed';
+            alertDiv.style.top = '50%';
+            alertDiv.style.left = '50%';
+            alertDiv.style.transform = 'translate(-50%, -50%)';
+            alertDiv.style.padding = '20px';
+            alertDiv.style.background = '#fff';
+            alertDiv.style.border = '2px solid rgb(255, 255, 255)';
+            alertDiv.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
+            alertDiv.style.zIndex = '9999';
+            alertDiv.style.minWidth = '200px'; // 最小宽度
+            alertDiv.style.minHeight = '100px'; // 最小高度
+            alertDiv.style.maxWidth = '600px'; // 最大宽度，防止内容过长
+
+            // 添加标题
+            const title = document.createElement('h3');
+            title.innerHTML = dictionary[document.documentElement.lang]["msg"] ?? "Message";
+            title.style.marginBottom = '10px';
+            title.style.color = '#333';
+            alertDiv.appendChild(title);
+
+            // 在 div 中添加文本
+            const content = document.createElement('p');
+            content.innerHTML = text ?? dictionary[document.documentElement.lang]["none"] ?? "None";
+            content.style.marginBottom = '10px';
+            content.style.wordWrap = 'break-word'; // 或者使用 overflow-wrap: break-word;
+            alertDiv.appendChild(content);
+
+            // 创建关闭按钮
+            const closeButton = document.createElement('button');
+            closeButton.innerHTML = dictionary[document.documentElement.lang]["close"] ?? 'Close';
+            closeButton.style.cursor = 'pointer';
+            closeButton.style.padding = '8px 12px';
+            closeButton.style.background = '#007BFF';
+            closeButton.style.color = '#fff';
+            closeButton.style.border = 'none';
+            closeButton.style.borderRadius = '4px';
+            closeButton.style.fontWeight = 'bold';
+            closeButton.style.transition = 'background 0.3s';
+            closeButton.onclick = function () {
+                document.body.removeChild(alertDiv);
+            };
+            closeButton.onmouseover = function () {
+                closeButton.style.background = '#0056b3';
+            };
+            closeButton.onmouseout = function () {
+                closeButton.style.background = '#007BFF';
+            };
+
+            // 设置关闭按钮的样式，使其水平居中
+            closeButton.style.marginLeft = 'auto';
+            closeButton.style.marginRight = 'auto';
+            closeButton.style.display = 'block';
+
+            // 将关闭按钮添加到 div 中
+            alertDiv.appendChild(closeButton);
+
+            // 将 div 添加到 body 中
+            document.body.appendChild(alertDiv);
+        }
+
+        function toggleLanguage() {
+            let language = document.documentElement.lang;
+
+            if (language === "zh-CN") {
+                // 切换到英文
+                document.documentElement.lang = "en";
+                for (let key in dictionary["zh-CN"]) {
+                    for (let elementsByClassNameKey of document.getElementsByClassName(key)) {
+                        elementsByClassNameKey.innerHTML = dictionary["en"][key];
+                    }
+                }
+            } else {
+                // 切换到中文
+                document.documentElement.lang = "zh-CN";
+                for (let key in dictionary["zh-CN"]) {
+                    for (let elementsByClassNameKey of document.getElementsByClassName(key)) {
+                        elementsByClassNameKey.innerHTML = dictionary["zh-CN"][key];
+                    }
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            toggleLanguage()
+            document.getElementById('restart').addEventListener('click', () => {
+                if (isButtonEnabled) {
+                    isButtonEnabled = false;
+                    let result = ipcRenderer.sendSync('openReboot', null);
+                    console.log(result);
+                    showAlert(dictionary[document.documentElement.lang][result] ?? result)
+
+                    setTimeout(() => {
+                        isButtonEnabled = true;
+                    }, 2000);
+                }
+            });
+            document.getElementById('dfu').addEventListener('click', () => {
+                if (isButtonEnabled) {
+                    isButtonEnabled = false;
+                    const result = ipcRenderer.sendSync('openDFU', null);
+                    console.log(result);
+                    showAlert(dictionary[document.documentElement.lang][result] ?? result)
+
+                    setTimeout(() => {
+                        isButtonEnabled = true;
+                    }, 2000);
+                }
+            });
+            document.getElementById('ipsw').addEventListener('click', () => {
+                if (isButtonEnabled) {
+                    isButtonEnabled = false;
+                    ipcRenderer.send('openIPSW', null);
+
+                    setTimeout(() => {
+                        isButtonEnabled = true;
+                        console.log('按钮现在可再次点击');
+                    }, 2000);
+                }
+            });
+            document.getElementById('bypassMdm').addEventListener('click', () => {
+                if (isButtonEnabled) {
+                    isButtonEnabled = false;
+                    ipcRenderer.send('openMDM', null);
+
+                    setTimeout(() => {
+                        isButtonEnabled = true;
+                        console.log('按钮现在可再次点击');
+                    }, 2000);
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<button class="language-button" onclick="toggleLanguage()">Toggle Language</button>
+
+<div class="button-container">
+    <button class="button restart" id="restart"></button>
+    <button class="button dfu" id="dfu"></button>
+    <button class="button ipsw" id="ipsw"></button>
+    <button class="button bypassMdm" id="bypassMdm"></button>
+</div>
+
+<div class="reward">
+    <img src="./wechat.png" alt="微信">
+    <img src="./wechatpay.png" alt="微信打赏码">
+    <img src="./alipay.png" alt="支付宝打赏码">
+</div>
+
+<div class="footer">
+    <span class="author"></span>
+    <div>XRSec</div>
+    <span class="wechat"></span>
+    <div>xr_sec</div>
+    <span class="email"></span>
+    <div>jalapeno1868@outlook.com</div>
+</div>
+</body>
+</html>
