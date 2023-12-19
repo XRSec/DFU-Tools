@@ -1,10 +1,10 @@
 ## macOS DFU Tools
 
-> 本项目是一个macOS下的DFU工具，用于快速进入DFU模式，以及快速重启以及进入Recovery模式(尚未测试)。
+> 本项目是一个macOS下的DFU工具，用于快速进入DFU模式、快速重启以及进入Recovery模式(尚未测试)。
 > 
-> This project is a DFU tool under mac OS for fast entry into DFU mode, as well as fast restart and entry into Recovery mode (not yet tested).
+> This project is a DFU tool under mac OS for fast entry into DFU mode, fast restart, and entry into Recovery mode (not yet tested).
 > 
-> depend on [AsahiLinux/macvdmtool](https://github.com/AsahiLinux/macvdmtool)
+> 依赖于 / depend on [AsahiLinux/macvdmtool](https://github.com/AsahiLinux/macvdmtool)
 
 ### Download
 
