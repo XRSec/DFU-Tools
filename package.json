@@ -1,7 +1,7 @@
 {
   "name": "dfu-tools",
   "productName": "DFU-Tools",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "macOS DFU TOOLS",
   "main": "electron/index.js",
   "scripts": {
