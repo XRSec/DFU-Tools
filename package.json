@@ -22,7 +22,7 @@
   ],
   "author": "XRSec",
   "devDependencies": {
-    "electron": "^28.0.0",
+    "electron": "^28.1.0",
     "electron-builder": "^24.9.1"
   },
   "dependencies": {
