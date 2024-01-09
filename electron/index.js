@@ -6,7 +6,8 @@ const options = {
     name: "DFU Tools",
     icns: join(__dirname, 'icon.icns')
 }
-let dfuTools = join(__dirname, 'dfuTools')
+let arch = process.arch === 'arm64' ? 'arm64' : 'x64';
+let dfuTools = join(__dirname, 'dfuTools/dfuTools_' + arch)
 if (__dirname.includes('/Contents/Resources/')) {
     dfuTools = join(__dirname, '../dfuTools')
 }
