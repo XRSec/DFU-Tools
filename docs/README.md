@@ -10,7 +10,7 @@
 
 > [Github Release](https://github.com/XRSec/DFU-Tools/releases)
 > 
-> [镜像加速(Inter 1.1.0)](https://mirror.ghproxy.com/https://github.com/XRSec/DFU-Tools/releases/download/1.1.0/DFU-Tools_x64.dmg)
+> [镜像加速(Inter 1.1.0)](https://mirror.ghproxy.com/https://github.com/XRSec/DFU-Tools/releases/download/1.1.5/DFU-Tools_x64.dmg)
 > 
 > [镜像加速(Apple 1.1.0)](https://mirror.ghproxy.com/https://github.com/XRSec/DFU-Tools/releases/download/1.1.0/DFU-Tools_arm64.dmg)
 
@@ -19,3 +19,10 @@
 ![dashboard](./dashboard_en.png)
 ![dashboard](./dashboard.png)
 
+## 报错汇总
+
+### 已损坏 打不开
+
+```bash
+sudo xattr -rd com.apple.quarantine /Applications/DFU-Tools.app
+```
