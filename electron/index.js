@@ -2,14 +2,22 @@ const {app, BrowserWindow, ipcMain, Menu, shell} = require('electron')
 const sudo = require('sudo-prompt');
 const {join} = require("node:path");
 const {execSync} = require("child_process");
+const {chmodSync} = require("fs");
 const options = {
     name: "DFU Tools",
     icns: join(__dirname, 'icon.icns')
 }
 let dfuTools = join(__dirname, 'dfuTools')
+
 if (__dirname.includes('/Contents/Resources/')) {
     dfuTools = join(__dirname, '../dfuTools')
 }
+
+console.log(dfuTools)
+chmodSync(dfuTools, '755', (err) => {
+    if (err) throw err;
+});
+
 let configuratorStatus = false;
 const createWindow = () => {
     const win = new BrowserWindow({
