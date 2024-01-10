@@ -8,16 +8,17 @@
     "!icon.icns",
     "!electron/dfuTools*",
     "!macvdmtool",
-    "!docs"
+    "!docs",
+    "!release"
   ],
-  "extraResources": [
+  "extraFiles": [
     {
       "from": "electron/dfuTools_${arch}",
-      "to": "./dfuTools"
+      "to": "./Resources/dfuTools"
     }
   ],
+  "artifactName": "${productName}_${arch}.${ext}",
   "mac": {
-    "artifactName": "${productName}_${arch}.${ext}",
     "target": [
       {
         "target": "dmg",
@@ -26,6 +27,9 @@
           "x64"
         ]
       }
+    ],
+    "publish": [
+      "github"
     ],
     "darkModeSupport": true,
     "icon": "electron/icon.icns",

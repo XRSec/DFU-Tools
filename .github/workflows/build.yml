@@ -50,6 +50,10 @@ jobs:
           name: dfuTools_amd64
           path: electron/dfuTools_x64
 
+      - name: Chmod dfuTools
+        run: |
+          chmod +x electron/dfuTools_*
+
       - name: Build Release Files
         run: npm run pack
         env:
@@ -74,7 +78,7 @@ jobs:
         name: Make release
         uses: softprops/action-gh-release@v1
         with:
-          files: "release/**/*.dmg"
+          files: "release/${{ steps.get-version.outputs.version }}/*.*"
           body: "Update ${{ steps.get-version.outputs.version }}"
           name: ${{ steps.get-version.outputs.version }}
           tag_name: ${{ steps.get-version.outputs.version }}
