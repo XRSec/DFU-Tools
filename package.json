@@ -6,7 +6,7 @@
   "main": "electron/index.js",
   "scripts": {
     "start": "nodemon --exec electron electron --ext js,html",
-    "pack": "electron-builder"
+    "pack": "export DEBUG=electron-builder:* electron-builder"
   },
   "repository": {
     "type": "git",
