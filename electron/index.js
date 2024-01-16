@@ -2,14 +2,27 @@ const {app, BrowserWindow, ipcMain, Menu, shell} = require('electron')
 const sudo = require('sudo-prompt');
 const {join} = require("node:path");
 const {execSync} = require("child_process");
+const {chmodSync, existsSync} = require("fs");
 const options = {
     name: "DFU Tools",
     icns: join(__dirname, 'icon.icns')
 }
-let dfuTools = join(__dirname, 'dfuTools')
+const arch = process.arch === 'arm64' ? 'arm64' : 'x64';
+let dfuTools = join(__dirname, `dfuTools_${arch}`)
+
 if (__dirname.includes('/Contents/Resources/')) {
-    dfuTools = join(__dirname, '../dfuTools')
+    dfuTools = join(__dirname, '../../dfuTools')
 }
+if (!existsSync(dfuTools)) {
+    dfuTools = join(dfuTools, `dfuTools_${arch}`)
+}
+
+console.debug(`dfuTools: ${dfuTools}`)
+
+chmodSync(dfuTools, '755', (err) => {
+    if (err) throw err;
+});
+
 let configuratorStatus = false;
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -53,6 +66,7 @@ ipcMain.on('openReboot', (event) => {
     }
     sudo.exec(`${dfuTools} reboot`, options, function (error, stdout, _stderr) {
         if (error) {
+            console.debug(`error: ${error}`)
             event.returnValue = "run_error";
             return
         }
@@ -62,11 +76,13 @@ ipcMain.on('openReboot', (event) => {
 
 ipcMain.on('openDFU', (event) => {
     if (!checkConfiguratorRunning()) {
+        console.debug(`configurator not running`)
         event.returnValue = "configurator_not_running";
         return;
     }
     sudo.exec(`${dfuTools} dfu`, options, function (error, stdout, _stderr) {
         if (error) {
+            console.debug(`error: ${error}`)
             event.returnValue = "run_error";
             return
         }
