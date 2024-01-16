@@ -50,6 +50,10 @@ jobs:
           name: dfuTools_amd64
           path: electron/dfuTools_x64
 
+      - name: Chmod dfuTools
+        run: |
+          chmod +x electron/dfuTools_*
+
       - name: Build Release Files
         run: npm run pack
         env:
@@ -64,17 +68,18 @@ jobs:
           delete_tag_pattern: ""
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
-
-      - name: 获取版本号
+      -
+        name: 获取版本号
         id: get-version
         run: |
-          echo "version=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
-
+          version=$(jq -r .version package.json)
+          echo "version=${version}" >> $GITHUB_OUTPUT
+          echo "files=${find release/${version} -maxdepth 1 -type f ! -name 'builder-debug.yml'}" >> $GITHUB_OUTPUT
       -
         name: Make release
         uses: softprops/action-gh-release@v1
         with:
-          files: "release/**/*.dmg"
+          files: ${{ steps.get-version.outputs.files }}
           body: "Update ${{ steps.get-version.outputs.version }}"
           name: ${{ steps.get-version.outputs.version }}
           tag_name: ${{ steps.get-version.outputs.version }}
