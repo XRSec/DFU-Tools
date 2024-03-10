@@ -34,7 +34,7 @@ const createWindow = () => {
             nodeIntegration: true,
             contextIsolation: false,
             webSecurity: true,
-            devTools: !app.isPackaged, // 如果是开发模式可以使用devTools 调试
+            devTools: true, // 如果是开发模式可以使用devTools 调试
             scrollBounce: process.platform === "darwin", // 在macos中启用橡皮动画
         },
         // transparent: true, //设置透明
@@ -44,7 +44,7 @@ const createWindow = () => {
     win.on('closed', () => {
         app.quit();
     });
-    !app.isPackaged && win.webContents.openDevTools()
+    app.isPackaged && win.webContents.openDevTools()
 }
 
 Menu.setApplicationMenu(Menu.buildFromTemplate([{
