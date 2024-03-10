@@ -1,26 +1,34 @@
 const {app, BrowserWindow, ipcMain, Menu, shell} = require('electron')
-const sudo = require('sudo-prompt');
 const {join} = require("node:path");
-const {execSync} = require("child_process");
-const {chmodSync} = require("fs");
-const options = {
-    name: "DFU Tools",
-    icns: join(__dirname, 'icon.icns')
-}
-let dfuTools = join(__dirname, 'dfuTools')
+const {execSync, exec} = require("child_process");
+const {chmod, existsSync, lstatSync} = require("fs");
+const prompt = require('electron-prompt');
+
+const arch = process.arch === 'arm64' ? 'arm64' : 'x64';
+let dfuTools = join(__dirname, `dfuTools_${arch}`),
+    admin_pass = '',
+    configuratorStatus = false,
+    win;
 
 if (__dirname.includes('/Contents/Resources/')) {
-    dfuTools = join(__dirname, '../dfuTools')
+    dfuTools = join(__dirname, '../../dfuTools')
+}
+if (!existsSync(dfuTools) || lstatSync(dfuTools).isDirectory()) {
+    dfuTools = join(dfuTools, `dfuTools_${arch}`)
 }
 
-console.log(dfuTools)
-chmodSync(dfuTools, '755', (err) => {
-    if (err) throw err;
+console.debug(`dfuTools: ${dfuTools}`)
+
+chmod(dfuTools, '755', (err) => {
+    if (err) {
+        throw err;
+    } else {
+        console.debug(`dfuTools chmod success`)
+    }
 });
 
-let configuratorStatus = false;
 const createWindow = () => {
-    const win = new BrowserWindow({
+    win = new BrowserWindow({
         width: 920,
         height: 580,
         minWidth: 920,
@@ -29,7 +37,7 @@ const createWindow = () => {
             nodeIntegration: true,
             contextIsolation: false,
             webSecurity: true,
-            devTools: !app.isPackaged, // 如果是开发模式可以使用devTools 调试
+            devTools: !app.isPackaged || process.env.DFU_DEBUG, // 如果是开发模式可以使用devTools 调试
             scrollBounce: process.platform === "darwin", // 在macos中启用橡皮动画
         },
         // transparent: true, //设置透明
@@ -39,19 +47,61 @@ const createWindow = () => {
     win.on('closed', () => {
         app.quit();
     });
-    !app.isPackaged && win.webContents.openDevTools()
+    (!app.isPackaged || process.env.DFU_DEBUG) && win.webContents.openDevTools()
+    win.webContents.on('dom-ready', () => {
+        if (admin_pass !== "") return;
+
+        function testPrivilege() {
+            exec(`echo '${admin_pass}' | sudo -S whoami`, {encoding: 'utf-8'}).on('exit', (code) => {
+                (code !== 0) && getPassword();
+                console.debug('run as admin privilege')
+            }).on('error', (err) => {
+                console.debug(err)
+                getPassword();
+            })
+        }
+
+        function getPassword() {
+            prompt({
+                title: '提示',
+                label: '请输入您的密码 / Please Enter U Passwd',
+                value: '',
+                inputAttrs: {type: 'password'},
+                type: 'input'
+            }).then((r) => {
+                if (r === null) {
+                    console.debug('user cancelled');
+                } else {
+                    console.debug('pass:', r);
+                    admin_pass = r;
+                    testPrivilege();
+                }
+            }).catch(console.error);
+        }
+
+        getPassword()
+    })
 }
 
-Menu.setApplicationMenu(Menu.buildFromTemplate([{
-    label: 'File',
-    submenu: [
-        {role: 'quit'},
-        {role: 'close'},
-    ]
-}]));
+Menu.setApplicationMenu(Menu.buildFromTemplate(
+    [{
+        label: 'File',
+        submenu: [
+            {role: 'quit'},
+            {role: 'close'},
+            {
+                label: 'Toggle Developer Tools',
+                click: () => {
+                    win.webContents.toggleDevTools();
+                }
+            }]
+    }]
+));
 
 app.whenReady().then(() => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+    if (BrowserWindow.getAllWindows().length === 0) {
+        createWindow();
+    }
 })
 
 ipcMain.on('openReboot', (event) => {
@@ -59,25 +109,40 @@ ipcMain.on('openReboot', (event) => {
         event.returnValue = "configurator_not_running";
         return;
     }
-    sudo.exec(`${dfuTools} reboot`, options, function (error, stdout, _stderr) {
-        if (error) {
-            event.returnValue = "run_error";
-            return
+    exec(`echo '${admin_pass}' | sudo -S ${dfuTools} reboot`, {encoding: 'utf-8'}, function (_error, stdout, _stderr) {
+        if (stdout.includes('No connection detected')) {
+            event.returnValue = "no_connection";
+            return;
+        } else if (stdout.includes('IOCreatePlugInInterfaceForService failed')) {
+            event.returnValue = "no_admin_permission";
+            return;
+        } else if (_error.toString().includes('command not found')) {
+            event.returnValue = "no_dfu_permission";
+            return;
         }
+        console.debug(_error, _stderr)
         event.returnValue = stdout;
     })
 })
 
 ipcMain.on('openDFU', (event) => {
     if (!checkConfiguratorRunning()) {
+        console.debug(`configurator not running`)
         event.returnValue = "configurator_not_running";
         return;
     }
-    sudo.exec(`${dfuTools} dfu`, options, function (error, stdout, _stderr) {
-        if (error) {
-            event.returnValue = "run_error";
-            return
+    exec(`echo '${admin_pass}' | sudo -S ${dfuTools} dfu`, {encoding: 'utf-8'}, function (_error, stdout, _stderr) {
+        if (stdout.includes('No connection detected')) {
+            event.returnValue = "no_connection";
+            return;
+        } else if (stdout.includes('IOCreatePlugInInterfaceForService failed')) {
+            event.returnValue = "no_admin_permission";
+            return;
+        } else if (_error.toString().includes('command not found')) {
+            event.returnValue = "no_dfu_permission";
+            return;
         }
+        console.debug(_error, _stderr)
         event.returnValue = stdout;
     })
 })

@@ -1,7 +1,7 @@
 {
   "name": "dfu-tools",
   "productName": "DFU-Tools",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "macOS DFU TOOLS",
   "main": "electron/index.js",
   "scripts": {
@@ -27,10 +27,10 @@
   },
   "license": "apache-2.0",
   "devDependencies": {
-    "electron": "^28.1.2",
-    "electron-builder": "^24.9.1"
+    "electron": "^29.1.1",
+    "electron-builder": "^24.13.3"
   },
   "dependencies": {
-    "sudo-prompt": "^9.2.1"
+    "electron-prompt": "^1.7.0"
   }
 }

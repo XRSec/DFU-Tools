@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
 
@@ -91,7 +90,7 @@
             'zh-CN': {
                 'title': '苹果电脑 刷机助手',
                 'restart': '重启',
-                'dfu': 'DFU',
+                'dfu': '工厂模式 DFU',
                 'ipsw': '镜像文件',
                 'bypassMdm': '绕过监管',
                 'author': '作者',
@@ -103,6 +102,9 @@
                 "close": '关闭',
                 "msg": "提示",
                 "none": "无内容",
+                "no_connection": '设备未连接',
+                "no_admin_permission": "无管理员权限",
+                "no_dfu_permission": "DFU工具无运行权限"
             },
             'en': {
                 'title': 'Apple Flashing Assistant',
@@ -119,6 +121,9 @@
                 "close": 'Close',
                 "msg": "Message",
                 "none": "None",
+                "no_connection": 'Devices Not Connection',
+                "no_admin_permission": "No Administrator Permission",
+                "no_dfu_permission": "DFU Tool No Permission"
             }
         };
         let isButtonEnabled = true;
@@ -270,8 +275,9 @@
 </div>
 
 <div class="reward">
-    <img src="./wechat.png" alt="微信">
-    <img src="./pay.png" alt="打赏码">
+    <img src="./wechat.png" alt="微信" class="wechat">
+    <img src="./wechatpay.png" alt="微信打赏码">
+    <img src="./alipay.png" alt="支付宝打赏码">
 </div>
 
 <div class="footer">

@@ -28,6 +28,9 @@
         ]
       }
     ],
+    "publish": [
+      "github"
+    ],
     "darkModeSupport": true,
     "icon": "electron/icon.icns",
     "category": "public.app-category.productivity",
