@@ -1,4 +1,4 @@
-release
-node_modules
-electron/dfuTools*
+/release/
+/node_modules
+/electron/dfuTools*
 /macvdmtool/main.o

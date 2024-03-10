@@ -9,7 +9,8 @@
     "!electron/dfuTools*",
     "!macvdmtool",
     "!docs",
-    "!release"
+    "!release",
+    "!electron/已损坏修复"
   ],
   "extraFiles": [
     {
@@ -28,12 +29,35 @@
         ]
       }
     ],
+    "publish": [
+      "github"
+    ],
     "darkModeSupport": true,
     "icon": "electron/icon.icns",
     "category": "public.app-category.productivity",
     "electronLanguages": [
       "zh_CN",
       "en"
+    ]
+  },
+  "dmg": {
+    "contents": [
+      {
+        "x": 135,
+        "y": 100
+      },
+      {
+        "x": 407,
+        "y": 100,
+        "type": "link",
+        "path": "/Applications"
+      },
+      {
+        "x": 135,
+        "y": 250,
+        "type": "file",
+        "path": "electron/已损坏修复"
+      }
     ]
   }
 }
