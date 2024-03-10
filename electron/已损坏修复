@@ -48,3 +48,4 @@ fi
 echo ""
 echo ""
 echo -e "本窗口可以关闭啦！"
+open /Applications/"$appBashName"
