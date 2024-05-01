@@ -1,5 +1,5 @@
 CXXFLAGS := -std=c++14
-LDFLAGS := -framework CoreFoundation -framework IOKit -lc++
+LDFLAGS := -std=c++14 -framework CoreFoundation -framework IOKit -lc++
 
 OBJS := main.o
 
