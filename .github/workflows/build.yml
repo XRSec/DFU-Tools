@@ -12,16 +12,17 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+          repository: "AsahiLinux/macvdmtool"
       - name: Build MacVDMTool
         run: |
-          cd macvdmtool
           make
           cc -o dfuTools_${{ matrix.arch }} main.o -framework CoreFoundation -framework IOKit -lc++
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: dfuTools_${{ matrix.arch }}
-          path: macvdmtool/dfuTools_${{ matrix.arch }}
+          path: dfuTools_${{ matrix.arch }}
           retention-days: 5
   build:
     needs: macvdmtool
@@ -42,41 +43,44 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dfuTools_arm64
-          path: electron/dfuTools_arm64
+          path: electron/
 
       - name: Download Artifact (amd64)
         uses: actions/download-artifact@v4
         with:
           name: dfuTools_amd64
-          path: electron/dfuTools_x64
+          path: electron/
 
       - name: Chmod dfuTools
         run: |
           chmod +x electron/dfuTools_*
+          mkdir -p electron/dfuTools/x64 electron/dfuTools/arm64
+          mv electron/dfuTools_amd64 electron/dfuTools/x64/dfuTools
+          mv electron/dfuTools_arm64 electron/dfuTools/arm64/dfuTools
+          chmod +x electron/dfuTools/x64/dfuTools electron/dfuTools/arm64/dfuTools
 
       - name: Build Release Files
         run: npm run pack
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
 
-      -
-        name: Delete old Releases
-        uses: dev-drprasad/delete-older-releases@v0.3.2
+      - name: Delete old Releases
+        uses: dev-drprasad/delete-older-releases@v0.3.3
         with:
           repo: ${{ github.repository }}
           keep_latest: 3
           delete_tag_pattern: ""
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
-      -
-        name: 获取版本号
+
+      - name: 获取版本号
         id: get-version
         run: |
           version=$(jq -r .version package.json)
           echo "version=${version}" >> $GITHUB_OUTPUT
-      -
-        name: Make release
-        uses: softprops/action-gh-release@v1
+
+      - name: Make release
+        uses: softprops/action-gh-release@v2
         with:
           files: |
             release/${{ steps.get-version.outputs.version }}/DFU-Tools_x64.dmg

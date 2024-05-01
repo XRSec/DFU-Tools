@@ -6,7 +6,7 @@
   },
   "files": [
     "!icon.icns",
-    "!electron/dfuTools*",
+    "!electron/dfuTools",
     "!macvdmtool",
     "!docs",
     "!release",
@@ -14,8 +14,8 @@
   ],
   "extraFiles": [
     {
-      "from": "electron/dfuTools_${arch}",
-      "to": "./Resources/dfuTools"
+      "from": "electron/dfuTools/${arch}/dfuTools",
+      "to": "./Resources/"
     }
   ],
   "artifactName": "${productName}_${arch}.${ext}",
