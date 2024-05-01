@@ -18,7 +18,7 @@ jobs:
     steps:
 
       - name: Check Not Allowed File Changes
-        uses: dorny/paths-filter@v2
+        uses: dorny/paths-filter@v3.0.2
         id: filter_not_allowed
         with:
           list-files: json
@@ -31,7 +31,7 @@ jobs:
       # ref: https://github.com/github/docs/blob/main/.github/workflows/triage-unallowed-contributions.yml
       - name: Comment About Changes We Can't Accept
         if: ${{ steps.filter_not_allowed.outputs.change == 'true' }}
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7.0.1
         with:
           script: |
             let workflowFailMessage = "It looks like you've modified some files that we can't accept as contributions."
@@ -57,7 +57,7 @@ jobs:
 
       - name: Check Not Linted Markdown
         if: ${{ always() }}
-        uses: dorny/paths-filter@v2
+        uses: dorny/paths-filter@v3.0.2
         id: filter_markdown
         with:
           list-files: shell
@@ -73,7 +73,7 @@ jobs:
     if: ${{ always() && needs.job1.outputs.markdown_change == 'true' }}
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 

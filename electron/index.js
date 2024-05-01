@@ -5,16 +5,13 @@ const {chmod, existsSync, lstatSync} = require("fs");
 const prompt = require('electron-prompt');
 
 const arch = process.arch === 'arm64' ? 'arm64' : 'x64';
-let dfuTools = join(__dirname, `dfuTools_${arch}`),
+let dfuTools = join(__dirname, `dfuTools/${arch}/dfuTools`),
     admin_pass = '',
     configuratorStatus = false,
     win;
 
 if (__dirname.includes('/Contents/Resources/')) {
-    dfuTools = join(__dirname, '../../dfuTools')
-}
-if (!existsSync(dfuTools) || lstatSync(dfuTools).isDirectory()) {
-    dfuTools = join(dfuTools, `dfuTools_${arch}`)
+    dfuTools = join(__dirname, `../../dfuTools`)
 }
 
 console.debug(`dfuTools: ${dfuTools}`)
@@ -110,17 +107,17 @@ ipcMain.on('openReboot', (event) => {
         return;
     }
     exec(`echo '${admin_pass}' | sudo -S ${dfuTools} reboot`, {encoding: 'utf-8'}, function (_error, stdout, _stderr) {
-        if (stdout.includes('No connection detected')) {
+        if (stdout?.includes('No connection detected')) {
             event.returnValue = "no_connection";
             return;
-        } else if (stdout.includes('IOCreatePlugInInterfaceForService failed')) {
+        } else if (stdout?.includes('IOCreatePlugInInterfaceForService failed')) {
             event.returnValue = "no_admin_permission";
             return;
-        } else if (_error.toString().includes('command not found')) {
+        } else if (_error?.toString().includes('command not found')) {
             event.returnValue = "no_dfu_permission";
             return;
         }
-        console.debug(_error, _stderr)
+        console.debug(`error: ${_error} stderr: ${_stderr}`)
         event.returnValue = stdout;
     })
 })
@@ -132,17 +129,18 @@ ipcMain.on('openDFU', (event) => {
         return;
     }
     exec(`echo '${admin_pass}' | sudo -S ${dfuTools} dfu`, {encoding: 'utf-8'}, function (_error, stdout, _stderr) {
-        if (stdout.includes('No connection detected')) {
+        console.log(_error)
+        if (stdout?.includes('No connection detected')) {
             event.returnValue = "no_connection";
             return;
-        } else if (stdout.includes('IOCreatePlugInInterfaceForService failed')) {
+        } else if (stdout?.includes('IOCreatePlugInInterfaceForService failed')) {
             event.returnValue = "no_admin_permission";
             return;
-        } else if (_error.toString().includes('command not found')) {
+        } else if (_error?.toString().includes('command not found')) {
             event.returnValue = "no_dfu_permission";
             return;
         }
-        console.debug(_error, _stderr)
+        console.debug(`error: ${_error} stderr: ${_stderr}`)
         event.returnValue = stdout;
     })
 })
