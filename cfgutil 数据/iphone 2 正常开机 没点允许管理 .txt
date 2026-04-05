@@ -1,0 +1,247 @@
+➜  ~ /Applications/Apple\ Configurator.app/Contents/MacOS/cfgutil get all
+acceptsSupervision:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+activationState:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+appDiskUsage:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+audioDiskUsage:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+backupWillBeEncrypted:
+no
+
+batteryCurrentCapacity:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+batteryIsCharging:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+bluetoothAddress:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+booksDiskUsage:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+bootedState:
+Booted
+
+buildVersion:
+19E241
+
+cloudBackupsAreEnabled:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+color:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+configurationProfiles:
+
+
+deviceClass:
+iPhone
+
+deviceType:
+iPhone14,3
+
+documentsDiskUsage:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+ECID:
+加密
+
+enclosureColor:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+ethernetAddress:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+firmwareVersion:
+15.4
+
+freeDiskSpace:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+hasTelephonyCapability:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+ICCID:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+ICCID2:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+IMEI:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+IMEI2:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+installedApps:
+
+
+isPaired:
+no
+
+isRestorable:
+yes
+
+isSupervised:
+no
+
+language:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+locale:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+locationID:
+17825792
+
+logsDiskUsage:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+name:
+iPhone 13 PM
+
+organizationAddress:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+organizationDepartment:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+organizationEmail:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+organizationMagic:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+organizationName:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+organizationPhone:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+otherDiskUsage:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+pairingAllowed:
+no
+
+passcodeProtected:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+phoneNumber:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+phoneNumber2:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+photosDiskUsage:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+portNumber:
+Error: 找不到预期值。 (ConfigurationUtilityKit.error 626)
+
+provisioningProfiles:
+(
+)
+
+serialNumber:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+stationNumber:
+Error: 找不到预期值。 (ConfigurationUtilityKit.error 626)
+
+supportedLanguages:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+supportedLocales:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+supportedPropertyNames:
+(
+    acceptsSupervision,
+    activationState,
+    appDiskUsage,
+    audioDiskUsage,
+    backupWillBeEncrypted,
+    batteryCurrentCapacity,
+    batteryIsCharging,
+    bluetoothAddress,
+    booksDiskUsage,
+    bootedState,
+    buildVersion,
+    cloudBackupsAreEnabled,
+    color,
+    configurationProfiles,
+    deviceClass,
+    deviceType,
+    documentsDiskUsage,
+    ECID,
+    enclosureColor,
+    ethernetAddress,
+    firmwareVersion,
+    freeDiskSpace,
+    hasTelephonyCapability,
+    ICCID,
+    ICCID2,
+    IMEI,
+    IMEI2,
+    installedApps,
+    isPaired,
+    isRestorable,
+    isSupervised,
+    language,
+    locale,
+    locationID,
+    logsDiskUsage,
+    name,
+    organizationAddress,
+    organizationDepartment,
+    organizationEmail,
+    organizationMagic,
+    organizationName,
+    organizationPhone,
+    otherDiskUsage,
+    pairingAllowed,
+    passcodeProtected,
+    phoneNumber,
+    phoneNumber2,
+    photosDiskUsage,
+    portNumber,
+    provisioningProfiles,
+    serialNumber,
+    stationNumber,
+    supportedLanguages,
+    supportedLocales,
+    supportedPropertyNames,
+    tags,
+    totalDiskCapacity,
+    totalSpaceAvailable,
+    UDID,
+    videoDiskUsage,
+    wifiAddress
+)
+
+tags:
+
+
+totalDiskCapacity:
+Error: 设备已被密码保护。 (com.apple.configurator.MobileDeviceKit.amd.error -402653158)
+
+totalSpaceAvailable:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+UDID:
+00008110-000220A40A60401E
+
+videoDiskUsage:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+wifiAddress:
+加密
+➜  ~

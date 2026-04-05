@@ -1,0 +1,246 @@
+➜  ~ sudo /Applications/Apple\ Configurator.app/Contents/MacOS/cfgutil get all
+acceptsSupervision:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+activationState:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+appDiskUsage:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+audioDiskUsage:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+backupWillBeEncrypted:
+no
+
+batteryCurrentCapacity:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+batteryIsCharging:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+bluetoothAddress:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+booksDiskUsage:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+bootedState:
+DFU
+
+buildVersion:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+cloudBackupsAreEnabled:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+color:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+configurationProfiles:
+
+
+deviceClass:
+MacBookAir
+
+deviceType:
+MacBookAir10,1
+
+documentsDiskUsage:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+ECID:
+0xC35A63A68801E
+
+enclosureColor:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+ethernetAddress:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+firmwareVersion:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+freeDiskSpace:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+hasTelephonyCapability:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+ICCID:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+ICCID2:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+IMEI:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+IMEI2:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+installedApps:
+
+
+isPaired:
+no
+
+isRestorable:
+yes
+
+isSupervised:
+no
+
+language:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+locale:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+locationID:
+1048576
+
+logsDiskUsage:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+name:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+organizationAddress:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+organizationDepartment:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+organizationEmail:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+organizationMagic:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+organizationName:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+organizationPhone:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+otherDiskUsage:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+pairingAllowed:
+no
+
+passcodeProtected:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+phoneNumber:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+phoneNumber2:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+photosDiskUsage:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+portNumber:
+Error: 找不到预期值。 (ConfigurationUtilityKit.error 626)
+
+provisioningProfiles:
+(
+)
+
+serialNumber:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+stationNumber:
+Error: 找不到预期值。 (ConfigurationUtilityKit.error 626)
+
+supportedLanguages:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+supportedLocales:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+supportedPropertyNames:
+(
+    acceptsSupervision,
+    activationState,
+    appDiskUsage,
+    audioDiskUsage,
+    backupWillBeEncrypted,
+    batteryCurrentCapacity,
+    batteryIsCharging,
+    bluetoothAddress,
+    booksDiskUsage,
+    bootedState,
+    buildVersion,
+    cloudBackupsAreEnabled,
+    color,
+    configurationProfiles,
+    deviceClass,
+    deviceType,
+    documentsDiskUsage,
+    ECID,
+    enclosureColor,
+    ethernetAddress,
+    firmwareVersion,
+    freeDiskSpace,
+    hasTelephonyCapability,
+    ICCID,
+    ICCID2,
+    IMEI,
+    IMEI2,
+    installedApps,
+    isPaired,
+    isRestorable,
+    isSupervised,
+    language,
+    locale,
+    locationID,
+    logsDiskUsage,
+    name,
+    organizationAddress,
+    organizationDepartment,
+    organizationEmail,
+    organizationMagic,
+    organizationName,
+    organizationPhone,
+    otherDiskUsage,
+    pairingAllowed,
+    passcodeProtected,
+    phoneNumber,
+    phoneNumber2,
+    photosDiskUsage,
+    portNumber,
+    provisioningProfiles,
+    serialNumber,
+    stationNumber,
+    supportedLanguages,
+    supportedLocales,
+    supportedPropertyNames,
+    tags,
+    totalDiskCapacity,
+    totalSpaceAvailable,
+    UDID,
+    videoDiskUsage,
+    wifiAddress
+)
+
+tags:
+
+
+totalDiskCapacity:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+totalSpaceAvailable:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+UDID:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)
+
+videoDiskUsage:
+Error: 某个参数无效。 (ConfigurationUtilityKit.error 2)
+
+wifiAddress:
+Error: 设备未启动进入系统。 (ConfigurationUtilityKit.error 604)

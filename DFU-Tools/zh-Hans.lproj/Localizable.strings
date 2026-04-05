@@ -1,0 +1,201 @@
+/* Language Manager */
+"Language_Changed" = "语言已更改";
+"Language_Restart_Message" = "应用程序将重启以应用新语言。";
+"Button_OK" = "确定";
+"Button_Cancel" = "取消";
+"Button_Select" = "选择";
+"Alert_Title" = "提示";
+
+/* Menu Items */
+"Menu_Language" = "语言";
+"Menu_Auto" = "自动检测";
+"Menu_English" = "English";
+"Menu_Simplified_Chinese" = "简体中文";
+"Menu_App_Name" = "DFU-Tools";
+"Menu_About" = "关于 DFU-Tools";
+"Menu_Hide_App" = "隐藏 DFU-Tools";
+"Menu_Hide_Others" = "隐藏其他";
+"Menu_Show_All" = "全部显示";
+"Menu_Quit" = "退出 DFU-Tools";
+
+/* Buttons */
+"Button_DFU" = "DFU";
+"Button_Reboot" = "重启";
+"Button_Restore" = "恢复";
+"Button_Revive" = "修复";
+"Button_Get_IPSW" = "获取 IPSW";
+"Button_Bypass_MDM" = "绕过监管";
+"Button_Use_IPSW" = "使用 IPSW";
+"Button_Select_IPSW" = "选择 IPSW 文件";
+
+/* Device List */
+"Device_List_Header" = "设备";
+"Device_Status_DFU" = "DFU状态";
+"Device_Chip_Type" = "芯片";
+"Device_Chip_M" = "M";
+"Device_Chip_A" = "A";
+"Device_Chip_T" = "T2";
+"Device_Chip_O" = "其他";
+"Device_Status_Yes" = "是";
+"Device_Status_No" = "否";
+"Device_List_Refresh_Start" = "开始刷新设备列表...";
+"Device_List_Refresh_Failed" = "刷新设备列表失败: %@";
+"Device_List_Update_Success" = "设备列表已更新，共 %d 个设备";
+"Device_List_Empty" = "没有设备";
+"Device_List_Connect_First" = "请先连接设备，然后重试。";
+"Device_Detected_Count" = "检测到 %d 个设备";
+"Device_Status_Info" = "设备 %@ (ECID: %@) - DFU状态: %@";
+"Device_Cfgutil_Not_Found" = "未找到 cfgutil 或框架，使用预设设备";
+
+/* IPSW */
+"IPSW_Select_File" = "选择 IPSW 固件文件";
+"IPSW_No_File_Selected" = "未选择文件";
+
+/* Operations */
+"Operation_Start_Multiple" = "开始对 %2$d 个设备执行 %1$@ 操作...";
+"Operation_Start_Single" = "开始对设备 %2$@ (ECID: %3$@) 执行 %1$@...";
+"Operation_Success" = "成功";
+"Operation_Failed" = "失败";
+"Operation_Partial_Success" = "部分成功";
+"Operation_Restore_Success_All" = "所有 %d 个设备恢复成功！";
+"Operation_Revive_Success_All" = "所有 %d 个设备恢复（保留数据）成功！";
+"Operation_Restore_Failed_All" = "所有 %d 个设备恢复失败。";
+"Operation_Revive_Failed_All" = "所有 %d 个设备恢复（保留数据）失败。";
+"Operation_Success_Count" = "成功: %d 个设备\n失败: %d 个设备";
+"Operation_Device_Success" = "设备 %@ (ECID: %@) %@ 成功";
+"Operation_Device_Failed_Output" = "设备 %@ (ECID: %@) %@ 失败: 无法读取输出";
+"Operation_Device_Failed_Exit" = "设备 %@ (ECID: %@) %@ 失败: 退出代码 %d";
+"Operation_Device_Failed_Error" = "设备 %@ (ECID: %@) %@ 失败: %@";
+
+/* Errors */
+"Error_Command_Execution" = "执行命令时发生错误: %@";
+"Error_Exit_Code" = "退出代码: %d";
+"Error_Info" = "错误信息:\n";
+"Error_Title" = "错误";
+
+/* Apple Configurator */
+"Configurator_Required" = "需要安装 Apple Configurator";
+"Configurator_Not_Found" = "找不到 Apple Configurator 应用程序。\n\n请从 App Store 安装 Apple Configurator 应用程序，然后重试。\n\n安装路径：\n/Applications/Apple Configurator.app";
+"Configurator_Framework_Missing" = "缺少必需的框架";
+"Configurator_Framework_Not_Found" = "找不到 ConfigurationProfile 相关框架。\n\n请确保已正确安装 Apple Configurator 应用程序。\n\n如果已安装但仍有此问题，请重新安装 Apple Configurator。\n\n框架位置：\n/Applications/Apple Configurator.app/Contents/Frameworks/";
+
+/* Password Manager */
+"Password_Config_Save_Failed" = "保存配置文件失败: %@";
+"Password_Config_Not_Found" = "未找到配置文件";
+"Password_Config_Path_Error" = "无法获取配置文件路径";
+"Password_Config_Detected" = "检测到存储的配置，正在验证...";
+"Password_Config_Location" = "配置文件位置: %@";
+"Password_Config_Verify_Success" = "存储的配置验证成功";
+"Password_Config_Verify_Failed" = "存储的配置验证失败，需要重新输入";
+"Password_Config_Cached" = "已加载保存的设置";
+"Password_Config_Trying" = "尝试使用存储的配置...";
+"Password_Request" = "请求输入管理员密码...";
+"Password_Required" = "需要管理员权限";
+"Password_Wrong_Retry" = "密码错误，请重新输入管理员密码（剩余尝试次数: %d）";
+"Password_Enter" = "请输入管理员密码";
+"Password_Enter_Retry" = "密码错误，请重新输入管理员密码";
+"Password_Enter_Placeholder" = "请输入密码";
+"Password_Verify_Success" = "管理员密码验证成功，并已保存在本地";
+"Password_Save_Failed" = "保存配置失败";
+"Password_Verify_Failed" = "密码验证失败，请重新输入（剩余 %d 次）";
+"Password_Verify_Too_Many" = "密码验证失败次数过多，操作已取消";
+"Password_Config_Expired" = "配置已过期，请重新输入";
+"Password_Cache_Cleared" = "已清除密码缓存和本地保存的密码";
+"Password_Memory_Cache_Cleared" = "已清除内存缓存";
+"Password_Verify_Process_Failed" = "密码验证进程启动失败: %@";
+"Password_Execute_Process_Failed" = "执行进程启动失败: %@";
+
+/* Authorization */
+"Auth_Checking" = "正在检查授权状态...";
+"Auth_Skipped" = "授权校验流程已预留，当前默认关闭";
+"Auth_Device_Info" = "设备信息：";
+"Auth_Device_Info_Failed" = "无法读取本机设备信息";
+"Auth_Not_Implemented" = "授权校验已开启，但验证流程暂未实现";
+"Auth_Buttons_Disabled" = "授权未通过，已禁用安全操作按钮";
+
+/* Helper */
+"Helper_Not_Found" = "应用包内未找到 DFUToolsHelper";
+
+/* About Panel */
+"About_Title" = "关于 DFU-Tools";
+"About_App_Name" = "DFU-Tools";
+"About_Subtitle" = "Apple Silicon DFU 与恢复工具";
+"About_Version" = "版本 1.0";
+"About_Copyright" = "© XRSec 2024";
+"About_DFU_Port_Title" = "========== DFU 端口指南 ==========";
+"About_DFU_Port_M4" = "   - MacBook Air M4: 左侧第二个端口";
+"About_DFU_Port_M1_M2_M3" = "   - MacBook (Air/Pro) M1/M2/M3: 左侧第一个端口";
+"About_DFU_Port_Intel_T2" = "   - Intel Mac (T2 芯片, 2018年后): 左侧第二个端口";
+"About_DFU_Port_Note" = "   - 注意: 刷机主机 (运行本工具的 Mac) 应使用靠近屏幕的第一个端口";
+"About_Guide_Title" = "========== 使用指南 ==========";
+"About_Guide_1_Title" = "1. 设备连接";
+"About_Guide_1_1" = "   - 确保您的 Apple Silicon 设备已通过 USB 连接到 Mac";
+"About_Guide_1_2" = "   - 在设备列表下拉菜单中选择要操作的设备";
+"About_Guide_2_Title" = "2. DFU 模式";
+"About_Guide_2_1" = "   - 点击 \"DFU\" 按钮将设备进入 DFU 模式";
+"About_Guide_2_2" = "   - 设备将重启并进入 DFU 模式";
+"About_Guide_3_Title" = "3. 恢复设备";
+"About_Guide_3_1" = "   - 如果选择了 \"使用 IPSW\" 复选框，请先点击 \"选择 IPSW 文件\" 按钮选择固件文件";
+"About_Guide_3_2" = "   - 点击 \"Restore\" 按钮开始恢复设备";
+"About_Guide_3_3" = "   - 恢复过程可能需要几分钟，请耐心等待";
+"About_Guide_4_Title" = "4. 恢复设备（不擦除数据）";
+"About_Guide_4_1" = "   - 点击 \"Revive\" 按钮可以恢复设备但保留数据";
+"About_Guide_4_2" = "   - 此功能需要设备处于 DFU 模式";
+"About_Guide_5_Title" = "5. 重启设备";
+"About_Guide_5_1" = "   - 点击 \"Reboot\" 按钮可以重启设备";
+"About_Guide_5_2" = "   - 设备将从 DFU 模式或正常模式重启";
+"About_Guide_6_Title" = "6. 使用 IPSW 文件";
+"About_Guide_6_1" = "   - 勾选 \"使用 IPSW\" 复选框以启用 IPSW 文件选择";
+"About_Guide_6_2" = "   - 点击 \"选择 IPSW 文件\" 按钮选择固件文件";
+"About_Guide_6_3" = "   - 选择的文件路径将显示在按钮旁边";
+"About_Notes_Title" = "注意事项：";
+"About_Notes_1" = "   - 操作设备前请确保已备份重要数据";
+"About_Notes_2" = "   - 恢复操作会清除设备上的所有数据（除非使用 Revive）";
+"About_Notes_3" = "   - 确保使用正确的 IPSW 文件版本";
+"About_Notes_4" = "   - 操作过程中请勿断开 USB 连接";
+"About_Support_Title" = "技术支持：";
+"About_Support_1" = "   - 如遇问题，请查看输出窗口中的详细信息";
+"About_Support_2" = "   - 联系客服获取帮助";
+
+/* Labels */
+"Label_Device_List" = "设备列表:";
+"Label_Logs" = "日志:";
+"Label_Status" = "状态";
+"Label_Customer_Service" = "客服";
+"Label_Developer" = "开发者";
+"Label_Donate" = "赞助";
+
+/* USB Device Monitor */
+"USB_Monitor_Already_Running" = "USB 监听器已经在运行";
+"USB_Monitor_Create_Port_Failed" = "无法创建 IONotificationPort";
+"USB_Monitor_Register_Added_Failed" = "注册设备添加通知失败: %d";
+"USB_Monitor_Register_Removed_Failed" = "注册设备移除通知失败: %d";
+"USB_Monitor_Started" = "USB 设备监听已启动";
+"USB_Monitor_Stopped" = "USB 设备监听已停止";
+"USB_Device_Detected" = "检测到 USB 设备: %@";
+"USB_Device_Detected_Unknown" = "检测到 USB 设备";
+"USB_Device_Disconnected" = "USB 设备已断开: %@";
+"USB_Device_Disconnected_Unknown" = "USB 设备已断开";
+
+/* Operation Messages */
+"Operation_DFU_Success" = "设备已进入 DFU 模式！";
+"Operation_DFU_Success_Message" = "如果设备没有响应，建议拔插一次数据线。";
+"Operation_DFU_Error" = "无法将设备置于 DFU 模式。";
+"Operation_DFU_Error_Hint_1" = "可能原因：";
+"Operation_DFU_Error_Hint_2" = "  - 设备未连接";
+"Operation_DFU_Error_Hint_3" = "  - 设备年份需晚于 2018";
+"Operation_DFU_Error_Hint_4" = "  - 请尝试左侧其他 USB-C 端口";
+"Operation_Reboot_Success" = "设备正在重启！";
+"Operation_Reboot_Success_Message" = "设备应很快恢复响应。";
+"Operation_Reboot_Error" = "无法重启设备。";
+"Operation_Critical_Failure" = "严重错误";
+"Operation_Privileges_Error" = "无法以足够的权限运行工具。\n错误 %d";
+"Operation_DFU_Permission_Error" = "检测到权限不足";
+"Operation_DFU_Permission_Error_Hint" = "这通常表示 helper 没有以 root 权限执行。请检查管理员密码输入是否正确，并确认应用具有足够权限。";
+"Operation_DFU_No_Connection" = "未检测到设备连接";
+"Operation_DFU_No_Connection_Hint" = "请检查 USB-C 数据线、确认目标设备已连接，并尝试更换 USB-C 端口。";
+"Operation_DFU_VDM_Failed" = "VDM 通信失败";
+"Operation_DFU_VDM_Failed_Hint" = "目标设备可能连接到了错误的 DFU 端口。请尝试目标设备上的其他 USB-C 端口。";
+
+/* System Errors */
+"Error_Unsupported_Mac" = "此 Mac 不支持打开该应用程序。";

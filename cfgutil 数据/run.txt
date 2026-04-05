@@ -1,0 +1,13 @@
+(base) ➜  ~ /Applications/Apple\ Configurator.app/Contents/MacOS/cfgutil -e 0x4502A0AA1801C restore -I ~/Downloads/UniversalMac_15.3.2_24D2082_Restore.ipsw
+cfgutil: restore: target OS is 15.3.2
+^C
+(base) ➜  ~ /Applications/Apple\ Configurator.app/Contents/MacOS/cfgutil restore -I ~/Downloads/UniversalMac_15.3.2_24D2082_Restore.ipsw
+cfgutil: restore: target OS is 15.3.2
+
+正在等待设备 [1/2] [***********************************************]  100%
+第 2/2 步：正在安装系统 [2/2] [*********************************]  100%
+Restored System on Unknown device (ECID: 0x4502A0AA1801C).
+
+--- Summary ---
+Operation "restore" succeeded on 1 devices.
+(base) ➜  ~

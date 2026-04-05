@@ -1,0 +1,257 @@
+➜  ~ /Applications/Apple\ Configurator.app/Contents/MacOS/cfgutil get all
+acceptsSupervision:
+no
+
+activationState:
+Activated
+
+appDiskUsage:
+46858240
+
+audioDiskUsage:
+0
+
+backupWillBeEncrypted:
+no
+
+batteryCurrentCapacity:
+76
+
+batteryIsCharging:
+no
+
+bluetoothAddress:
+a4:16:c0:0e:ee:e7
+
+booksDiskUsage:
+69632
+
+bootedState:
+Booted
+
+buildVersion:
+22C152
+
+cloudBackupsAreEnabled:
+no
+
+color:
+1
+
+configurationProfiles:
+com.apple.tvos.developersoftware tvOS 18 Beta Software Profile v1
+
+deviceClass:
+iPhone
+
+deviceType:
+iPhone14,6
+
+documentsDiskUsage:
+1763868672
+
+ECID:
+加密
+
+enclosureColor:
+6
+
+ethernetAddress:
+加密
+
+firmwareVersion:
+18.2
+
+freeDiskSpace:
+49585459200
+
+hasTelephonyCapability:
+yes
+
+ICCID:
+加密
+
+ICCID2:
+Error: 缺少值。 (com.apple.configurator.MobileDeviceKit.amd.error -402653163)
+
+IMEI:
+加密
+
+IMEI2:
+加密
+
+installedApps:
+加密
+
+isPaired:
+yes
+
+isRestorable:
+yes
+
+isSupervised:
+no
+
+language:
+zh-Hans-CN
+
+locale:
+zh_CN
+
+locationID:
+17825792
+
+logsDiskUsage:
+4866048
+
+name:
+iPhone
+
+organizationAddress:
+Error: 找不到预期值。 (ConfigurationUtilityKit.error 626)
+
+organizationDepartment:
+Error: 找不到预期值。 (ConfigurationUtilityKit.error 626)
+
+organizationEmail:
+Error: 找不到预期值。 (ConfigurationUtilityKit.error 626)
+
+organizationMagic:
+Error: 找不到预期值。 (ConfigurationUtilityKit.error 626)
+
+organizationName:
+Error: 找不到预期值。 (ConfigurationUtilityKit.error 626)
+
+organizationPhone:
+Error: 找不到预期值。 (ConfigurationUtilityKit.error 626)
+
+otherDiskUsage:
+12227365168
+
+pairingAllowed:
+yes
+
+passcodeProtected:
+no
+
+phoneNumber:
++86 155 7968 7509
+
+phoneNumber2:
+Error: 缺少值。 (com.apple.configurator.MobileDeviceKit.amd.error -402653163)
+
+photosDiskUsage:
+5765288
+
+portNumber:
+Error: 找不到预期值。 (ConfigurationUtilityKit.error 626)
+
+provisioningProfiles:
+(
+        {
+        expirationDate = "2026-03-16 14:50:26 +0000";
+        name = "iOS Team Store Provisioning Profile: com.mobile.scrcpy-ios.ScrcpyLiveActivityWidget";
+        version = 1;
+    },
+        {
+        expirationDate = "2026-03-16 14:50:26 +0000";
+        name = "iOS Team Store Provisioning Profile: com.mobile.scrcpy-ios";
+        version = 1;
+    }
+)
+
+serialNumber:
+加密
+
+stationNumber:
+Error: 找不到预期值。 (ConfigurationUtilityKit.error 626)
+
+supportedLanguages:
+
+
+supportedLocales:
+
+
+supportedPropertyNames:
+(
+    acceptsSupervision,
+    activationState,
+    appDiskUsage,
+    audioDiskUsage,
+    backupWillBeEncrypted,
+    batteryCurrentCapacity,
+    batteryIsCharging,
+    bluetoothAddress,
+    booksDiskUsage,
+    bootedState,
+    buildVersion,
+    cloudBackupsAreEnabled,
+    color,
+    configurationProfiles,
+    deviceClass,
+    deviceType,
+    documentsDiskUsage,
+    ECID,
+    enclosureColor,
+    ethernetAddress,
+    firmwareVersion,
+    freeDiskSpace,
+    hasTelephonyCapability,
+    ICCID,
+    ICCID2,
+    IMEI,
+    IMEI2,
+    installedApps,
+    isPaired,
+    isRestorable,
+    isSupervised,
+    language,
+    locale,
+    locationID,
+    logsDiskUsage,
+    name,
+    organizationAddress,
+    organizationDepartment,
+    organizationEmail,
+    organizationMagic,
+    organizationName,
+    organizationPhone,
+    otherDiskUsage,
+    pairingAllowed,
+    passcodeProtected,
+    phoneNumber,
+    phoneNumber2,
+    photosDiskUsage,
+    portNumber,
+    provisioningProfiles,
+    serialNumber,
+    stationNumber,
+    supportedLanguages,
+    supportedLocales,
+    supportedPropertyNames,
+    tags,
+    totalDiskCapacity,
+    totalSpaceAvailable,
+    UDID,
+    videoDiskUsage,
+    wifiAddress
+)
+
+tags:
+
+
+totalDiskCapacity:
+64000000000
+
+totalSpaceAvailable:
+63901388800
+
+UDID:
+00008110-001658C236A0201E
+
+videoDiskUsage:
+0
+
+wifiAddress:
+加密
+➜  ~
