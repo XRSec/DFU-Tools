@@ -1,0 +1,201 @@
+/* Language Manager */
+"Language_Changed" = "Language Changed";
+"Language_Restart_Message" = "The application will restart to apply the new language.";
+"Button_OK" = "OK";
+"Button_Cancel" = "Cancel";
+"Button_Select" = "Select";
+"Alert_Title" = "Alert";
+
+/* Menu Items */
+"Menu_Language" = "Language";
+"Menu_Auto" = "Auto Detect";
+"Menu_English" = "English";
+"Menu_Simplified_Chinese" = "简体中文";
+"Menu_App_Name" = "DFU-Tools";
+"Menu_About" = "About DFU-Tools";
+"Menu_Hide_App" = "Hide DFU-Tools";
+"Menu_Hide_Others" = "Hide Others";
+"Menu_Show_All" = "Show All";
+"Menu_Quit" = "Quit DFU-Tools";
+
+/* Buttons */
+"Button_DFU" = "DFU";
+"Button_Reboot" = "Reboot";
+"Button_Restore" = "Restore";
+"Button_Revive" = "Revive";
+"Button_Get_IPSW" = "Get IPSW";
+"Button_Bypass_MDM" = "Bypass MDM";
+"Button_Use_IPSW" = "Use IPSW";
+"Button_Select_IPSW" = "Select IPSW File";
+
+/* Device List */
+"Device_List_Header" = "Device";
+"Device_Status_DFU" = "DFU Status";
+"Device_Chip_Type" = "Chip";
+"Device_Chip_M" = "M";
+"Device_Chip_A" = "A";
+"Device_Chip_T" = "T2";
+"Device_Chip_O" = "Other";
+"Device_Status_Yes" = "Yes";
+"Device_Status_No" = "No";
+"Device_List_Refresh_Start" = "Starting to refresh device list...";
+"Device_List_Refresh_Failed" = "Failed to refresh device list: %@";
+"Device_List_Update_Success" = "Device list updated, total %d device(s)";
+"Device_List_Empty" = "No devices";
+"Device_List_Connect_First" = "Please connect a device first, then try again.";
+"Device_Detected_Count" = "Detected %d device(s)";
+"Device_Status_Info" = "Device %@ (ECID: %@) - DFU Status: %@";
+"Device_Cfgutil_Not_Found" = "cfgutil or frameworks not found, using preset devices";
+
+/* IPSW */
+"IPSW_Select_File" = "Select IPSW Firmware File";
+"IPSW_No_File_Selected" = "No file selected";
+
+/* Operations */
+"Operation_Start_Multiple" = "Starting %1$@ operation on %2$d device(s)...";
+"Operation_Start_Single" = "Starting %1$@ on device %2$@ (ECID: %3$@)...";
+"Operation_Success" = "Success";
+"Operation_Failed" = "Failed";
+"Operation_Partial_Success" = "Partial Success";
+"Operation_Restore_Success_All" = "All %d device(s) restored successfully!";
+"Operation_Revive_Success_All" = "All %d device(s) revived successfully!";
+"Operation_Restore_Failed_All" = "All %d device(s) restore failed.";
+"Operation_Revive_Failed_All" = "All %d device(s) revive failed.";
+"Operation_Success_Count" = "Success: %d device(s)\nFailed: %d device(s)";
+"Operation_Device_Success" = "Device %@ (ECID: %@) %@ succeeded";
+"Operation_Device_Failed_Output" = "Device %@ (ECID: %@) %@ failed: Unable to read output";
+"Operation_Device_Failed_Exit" = "Device %@ (ECID: %@) %@ failed: Exit code %d";
+"Operation_Device_Failed_Error" = "Device %@ (ECID: %@) %@ failed: %@";
+
+/* Errors */
+"Error_Command_Execution" = "An error occurred while executing command: %@";
+"Error_Exit_Code" = "Exit code: %d";
+"Error_Info" = "Error information:\n";
+"Error_Title" = "Error";
+
+/* Apple Configurator */
+"Configurator_Required" = "Apple Configurator Required";
+"Configurator_Not_Found" = "Apple Configurator application not found.\n\nPlease install Apple Configurator from the App Store, then try again.\n\nInstallation path:\n/Applications/Apple Configurator.app";
+"Configurator_Framework_Missing" = "Required Frameworks Missing";
+"Configurator_Framework_Not_Found" = "ConfigurationProfile related frameworks not found.\n\nPlease ensure Apple Configurator is correctly installed.\n\nIf installed but still experiencing issues, please reinstall Apple Configurator.\n\nFramework location:\n/Applications/Apple Configurator.app/Contents/Frameworks/";
+
+/* Password Manager */
+"Password_Config_Save_Failed" = "Failed to save config file: %@";
+"Password_Config_Not_Found" = "Config file not found";
+"Password_Config_Path_Error" = "Unable to get config file path";
+"Password_Config_Detected" = "Detected stored config, verifying...";
+"Password_Config_Location" = "Config file location: %@";
+"Password_Config_Verify_Success" = "Stored config verified successfully";
+"Password_Config_Verify_Failed" = "Stored config verification failed, need to re-enter";
+"Password_Config_Cached" = "Loaded saved settings";
+"Password_Config_Trying" = "Trying to use stored config...";
+"Password_Request" = "Requesting administrator password...";
+"Password_Required" = "Administrator Privileges Required";
+"Password_Wrong_Retry" = "Incorrect password, please re-enter administrator password (remaining attempts: %d)";
+"Password_Enter" = "Please enter administrator password";
+"Password_Enter_Retry" = "Incorrect password, please re-enter administrator password";
+"Password_Enter_Placeholder" = "Please enter password";
+"Password_Verify_Success" = "Administrator password verified and saved locally";
+"Password_Save_Failed" = "Failed to save config";
+"Password_Verify_Failed" = "Password verification failed, please re-enter (remaining %d attempts)";
+"Password_Verify_Too_Many" = "Too many password verification failures, operation cancelled";
+"Password_Config_Expired" = "Config has expired, please re-enter";
+"Password_Cache_Cleared" = "Cleared password cache and saved password";
+"Password_Memory_Cache_Cleared" = "Cleared memory cache";
+"Password_Verify_Process_Failed" = "Password verification process launch failed: %@";
+"Password_Execute_Process_Failed" = "Execute process launch failed: %@";
+
+/* Authorization */
+"Auth_Checking" = "Checking authorization status...";
+"Auth_Skipped" = "Authorization check is reserved but currently disabled";
+"Auth_Device_Info" = "Device information:";
+"Auth_Device_Info_Failed" = "Unable to read local device information";
+"Auth_Not_Implemented" = "Authorization is enabled, but the verification flow is not implemented yet";
+"Auth_Buttons_Disabled" = "Secure operation buttons are disabled because authorization has not passed";
+
+/* Helper */
+"Helper_Not_Found" = "DFUToolsHelper was not found in the application bundle";
+
+/* About Panel */
+"About_Title" = "About DFU-Tools";
+"About_App_Name" = "DFU-Tools";
+"About_Subtitle" = "Apple Silicon DFU and recovery utility";
+"About_Version" = "Version 1.0";
+"About_Copyright" = "© XRSec 2024";
+"About_DFU_Port_Title" = "========== DFU Port Guide ==========";
+"About_DFU_Port_M4" = "   - MacBook Air M4: Left side, second port";
+"About_DFU_Port_M1_M2_M3" = "   - MacBook (Air/Pro) M1/M2/M3: Left side, first port";
+"About_DFU_Port_Intel_T2" = "   - Intel Mac with T2 chip (2018+): Left side, second port";
+"About_DFU_Port_Note" = "   - Note: Host Mac (the one running this tool) should use the first port near the screen";
+"About_Guide_Title" = "========== User Guide ==========";
+"About_Guide_1_Title" = "1. Device Connection";
+"About_Guide_1_1" = "   - Ensure your Apple Silicon device is connected to Mac via USB";
+"About_Guide_1_2" = "   - Select the device to operate from the device list dropdown menu";
+"About_Guide_2_Title" = "2. DFU Mode";
+"About_Guide_2_1" = "   - Click the \"DFU\" button to put the device into DFU mode";
+"About_Guide_2_2" = "   - The device will restart and enter DFU mode";
+"About_Guide_3_Title" = "3. Restore Device";
+"About_Guide_3_1" = "   - If \"Use IPSW\" checkbox is selected, first click \"Select IPSW File\" button to select firmware file";
+"About_Guide_3_2" = "   - Click \"Restore\" button to start restoring device";
+"About_Guide_3_3" = "   - The restore process may take several minutes, please be patient";
+"About_Guide_4_Title" = "4. Revive Device (Preserve Data)";
+"About_Guide_4_1" = "   - Click \"Revive\" button to restore device while preserving data";
+"About_Guide_4_2" = "   - This feature requires the device to be in DFU mode";
+"About_Guide_5_Title" = "5. Reboot Device";
+"About_Guide_5_1" = "   - Click \"Reboot\" button to reboot device";
+"About_Guide_5_2" = "   - Device will reboot from DFU mode or normal mode";
+"About_Guide_6_Title" = "6. Using IPSW File";
+"About_Guide_6_1" = "   - Check \"Use IPSW\" checkbox to enable IPSW file selection";
+"About_Guide_6_2" = "   - Click \"Select IPSW File\" button to select firmware file";
+"About_Guide_6_3" = "   - Selected file path will be displayed next to the button";
+"About_Notes_Title" = "Notes:";
+"About_Notes_1" = "   - Ensure important data is backed up before operating device";
+"About_Notes_2" = "   - Restore operation will erase all data on device (unless using Revive)";
+"About_Notes_3" = "   - Ensure using correct IPSW file version";
+"About_Notes_4" = "   - Do not disconnect USB connection during operation";
+"About_Support_Title" = "Technical Support:";
+"About_Support_1" = "   - If encountering issues, check detailed information in output window";
+"About_Support_2" = "   - Contact customer service for help";
+
+/* Labels */
+"Label_Device_List" = "Device List:";
+"Label_Logs" = "Logs:";
+"Label_Status" = "Status";
+"Label_Customer_Service" = "Customer Service";
+"Label_Developer" = "Developer";
+"Label_Donate" = "Donate";
+
+/* USB Device Monitor */
+"USB_Monitor_Already_Running" = "USB monitor is already running";
+"USB_Monitor_Create_Port_Failed" = "Failed to create IONotificationPort";
+"USB_Monitor_Register_Added_Failed" = "Failed to register device added notification: %d";
+"USB_Monitor_Register_Removed_Failed" = "Failed to register device removed notification: %d";
+"USB_Monitor_Started" = "USB device monitoring started";
+"USB_Monitor_Stopped" = "USB device monitoring stopped";
+"USB_Device_Detected" = "USB device detected: %@";
+"USB_Device_Detected_Unknown" = "USB device detected";
+"USB_Device_Disconnected" = "USB device disconnected: %@";
+"USB_Device_Disconnected_Unknown" = "USB device disconnected";
+
+/* Operation Messages */
+"Operation_DFU_Success" = "Device is now in DFU mode!";
+"Operation_DFU_Success_Message" = "If there is no response, try unplugging and reconnecting the cable.";
+"Operation_DFU_Error" = "Could not put device in DFU mode.";
+"Operation_DFU_Error_Hint_1" = "Possible reasons:";
+"Operation_DFU_Error_Hint_2" = "  - Device is not connected";
+"Operation_DFU_Error_Hint_3" = "  - Device year should be later than 2018";
+"Operation_DFU_Error_Hint_4" = "  - Try another USB-C port on the left side";
+"Operation_Reboot_Success" = "Device is now rebooting!";
+"Operation_Reboot_Success_Message" = "The device should respond shortly.";
+"Operation_Reboot_Error" = "Could not reboot device.";
+"Operation_Critical_Failure" = "Critical Failure";
+"Operation_Privileges_Error" = "Could not run tool with sufficient privileges.\nError %d";
+"Operation_DFU_Permission_Error" = "Insufficient permissions detected";
+"Operation_DFU_Permission_Error_Hint" = "This usually means the helper was not executed with root privileges. Please check the administrator password and app permissions.";
+"Operation_DFU_No_Connection" = "No device connection detected";
+"Operation_DFU_No_Connection_Hint" = "Please check the USB-C cable, confirm the target device is connected, and try another USB-C port.";
+"Operation_DFU_VDM_Failed" = "VDM communication failed";
+"Operation_DFU_VDM_Failed_Hint" = "The target device may be connected to the wrong DFU port. Try another USB-C port on the target device.";
+
+/* System Errors */
+"Error_Unsupported_Mac" = "You can’t open this application because it is not supported on this Mac.";

@@ -1,0 +1,26 @@
+
+sudo DFUToolsHelper dfu
+Mac type: J713AP
+Looking for HPM devices...
+Found: IOService:/AppleARMPE/arm-io@10F00000/AppleH16GFamilyIO/nub-spmi-a0@88908000/AppleGen3SPMIController/hpm0@C/AppleHPMARMSPMI
+Connection: None
+Exiting DBMa mode... OK
+No connection detected
+
+设备未连接，被刷机设备未进入 DFU，刷机机器插错了口，被刷机设备插错了口，设备需要是 2018 年以后的设备
+
+sudo DFUToolsHelper dfu
+Mac type: J713AP
+Looking for HPM devices...
+Found: IOService:/AppleARMPE/arm-io@10F00000/AppleH16GFamilyIO/nub-spmi-a0@88908000/AppleGen3SPMIController/hpm0@C/AppleHPMARMSPMI
+Connection: Sink
+Status: APP
+Unlocking... OK
+Entering DBMa mode... Status: DBMa
+Rebooting target into DFU mode... VDM failed (reply: 0x05ac8092)
+Exiting DBMa mode... OK
+VDM failed
+被刷机设备口插错了，左边换一个口
+
+补充到关于：Macbook Air M4 DFU 口是左边第二个口
+Macbook(Air/Pro) M1/M2/M3 DFU 口是左边第一个口

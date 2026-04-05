@@ -1,0 +1,49 @@
+/* Main.storyboard 英文本地化 */
+
+/* Class = "NSMenuItem"; title = "Auto"; ObjectID = "Lang-Auto"; */
+"Lang-Auto.title" = "Auto";
+
+/* Class = "NSTextFieldCell"; title = "Customer Service"; ObjectID = "cellKefu"; */
+"cellKefu.title" = "Customer Service";
+
+/* Class = "NSTextFieldCell"; title = "Developer"; ObjectID = "cellDev"; */
+"cellDev.title" = "Developer";
+
+/* Class = "NSTextFieldCell"; title = "Donate"; ObjectID = "cellPay"; */
+"cellPay.title" = "Donate";
+
+/* Class = "NSTextFieldCell"; title = "Logs:"; ObjectID = "deviceLabelCell"; */
+"deviceLabelCell.title" = "Logs:";
+
+/* Class = "NSTextFieldCell"; title = "Device List:"; ObjectID = "uzZ-PM-4br"; */
+"uzZ-PM-4br.title" = "Device List:";
+
+/* Class = "NSButtonCell"; title = "Use IPSW"; ObjectID = "useIPSWCell"; */
+"useIPSWCell.title" = "Use IPSW";
+
+/* Class = "NSButtonCell"; title = "Select IPSW File"; ObjectID = "selectIPSWCell"; */
+"selectIPSWCell.title" = "Select IPSW File";
+
+/* Class = "NSTextFieldCell"; title = "No File Selected"; ObjectID = "ipswPathCell"; */
+"ipswPathCell.title" = "No File Selected";
+
+/* Class = "NSButtonCell"; title = "DFU"; ObjectID = "dfuButtonCell"; */
+"dfuButtonCell.title" = "DFU";
+
+/* Class = "NSButtonCell"; title = "Reboot"; ObjectID = "rebootButtonCell"; */
+"rebootButtonCell.title" = "Reboot";
+
+/* Class = "NSButtonCell"; title = "Restore"; ObjectID = "restoreButtonCell"; */
+"restoreButtonCell.title" = "Restore";
+
+/* Class = "NSButtonCell"; title = "Revive"; ObjectID = "reviveButtonCell"; */
+"reviveButtonCell.title" = "Revive";
+
+/* Class = "NSButtonCell"; title = "Get IPSW"; ObjectID = "ipswLinkCell"; */
+"ipswLinkCell.title" = "Get IPSW";
+
+/* Class = "NSButtonCell"; title = "Bypass MDM"; ObjectID = "mdmLinkCell"; */
+"mdmLinkCell.title" = "Bypass MDM";
+
+/* Class = "NSTextFieldCell"; title = "Apple Silicon DFU & reboot utility"; ObjectID = "PFa-tL-39w"; */
+"PFa-tL-39w.title" = "Apple Silicon DFU & reboot utility";

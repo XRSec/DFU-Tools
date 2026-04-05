@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B0131502281A078800F933D1 /* STPrivilegedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = B0131501281A078800F933D1 /* STPrivilegedTask.m */; };
+		B093D0D928199E0C0037F54C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093D0D828199E0C0037F54C /* AppDelegate.swift */; };
+		B093D0DB28199E0C0037F54C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093D0DA28199E0C0037F54C /* ViewController.swift */; };
+		B093D0DD28199E0E0037F54C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B093D0DC28199E0E0037F54C /* Assets.xcassets */; };
+		B093D0E028199E0E0037F54C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B093D0DE28199E0E0037F54C /* Main.storyboard */; };
+		B093D0F12819A56D0037F54C /* PasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093D0F22819A56D0037F54C /* PasswordManager.swift */; };
+		B093D0F32819A56E0037F54C /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093D0F42819A56E0037F54C /* LanguageManager.swift */; };
+		B093D0F52819A56F0037F54C /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093D0F62819A56F0037F54C /* DeviceManager.swift */; };
+		B093D0F72819A5700037F54C /* USBDeviceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093D0F82819A5700037F54C /* USBDeviceMonitor.swift */; };
+		B093D0F92819A5710037F54C /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093D0FA2819A5710037F54C /* LogManager.swift */; };
+		B093D0FB2819A5720037F54C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B093D0FC2819A5720037F54C /* Localizable.strings */; };
+		DFA0A001A001A001A001A001 /* DeviceBindingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0A011A011A011A011A011 /* DeviceBindingManager.swift */; };
+		DFA0A002A002A002A002A002 /* ProcessOutputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0A012A012A012A012A012 /* ProcessOutputReader.swift */; };
+		DFA0A003A003A003A003A003 /* SecureDFUManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0A013A013A013A013A013 /* SecureDFUManager.swift */; };
+		DFA0A004A004A004A004A004 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA0A014A014A014A014A014 /* AlertManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3521172E2EEE4F2E00F041A2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		88CC6CA187294002A424BB7C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		B0131500281A078800F933D1 /* STPrivilegedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPrivilegedTask.h; sourceTree = "<group>"; };
+		B0131501281A078800F933D1 /* STPrivilegedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPrivilegedTask.m; sourceTree = "<group>"; };
+		B0131504281A081100F933D1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B093D0D528199E0C0037F54C /* DFU-Tools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DFU-Tools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B093D0D828199E0C0037F54C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B093D0DA28199E0C0037F54C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B093D0DC28199E0E0037F54C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B093D0DF28199E0E0037F54C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B093D0E128199E0E0037F54C /* DFU-Tools.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DFU-Tools.entitlements"; sourceTree = "<group>"; };
+		B093D0F22819A56D0037F54C /* PasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordManager.swift; sourceTree = "<group>"; };
+		B093D0F42819A56E0037F54C /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		B093D0F62819A56F0037F54C /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
+		B093D0F82819A5700037F54C /* USBDeviceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBDeviceMonitor.swift; sourceTree = "<group>"; };
+		B093D0FA2819A5710037F54C /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
+		B093D0FD2819A5720037F54C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B093D0FE2819A5720037F54C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		DFA0A011A011A011A011A011 /* DeviceBindingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceBindingManager.swift; sourceTree = "<group>"; };
+		DFA0A012A012A012A012A012 /* ProcessOutputReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessOutputReader.swift; sourceTree = "<group>"; };
+		DFA0A013A013A013A013A013 /* SecureDFUManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureDFUManager.swift; sourceTree = "<group>"; };
+		DFA0A014A014A014A014A014 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B093D0D228199E0C0037F54C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B0131503281A081100F933D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0131504281A081100F933D1 /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B093D0CC28199E0C0037F54C = {
+			isa = PBXGroup;
+			children = (
+				B093D0D728199E0C0037F54C /* DFU-Tools */,
+				B093D0D628199E0C0037F54C /* Products */,
+				B0131503281A081100F933D1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B093D0D628199E0C0037F54C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B093D0D528199E0C0037F54C /* DFU-Tools.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B093D0D728199E0C0037F54C /* DFU-Tools */ = {
+			isa = PBXGroup;
+			children = (
+				B093D0D828199E0C0037F54C /* AppDelegate.swift */,
+				B093D0DA28199E0C0037F54C /* ViewController.swift */,
+				DFA0A014A014A014A014A014 /* AlertManager.swift */,
+				B093D0F22819A56D0037F54C /* PasswordManager.swift */,
+				B093D0F42819A56E0037F54C /* LanguageManager.swift */,
+				B093D0F62819A56F0037F54C /* DeviceManager.swift */,
+				DFA0A011A011A011A011A011 /* DeviceBindingManager.swift */,
+				B093D0F82819A5700037F54C /* USBDeviceMonitor.swift */,
+				B093D0FA2819A5710037F54C /* LogManager.swift */,
+				DFA0A012A012A012A012A012 /* ProcessOutputReader.swift */,
+				DFA0A013A013A013A013A013 /* SecureDFUManager.swift */,
+				B093D0DC28199E0E0037F54C /* Assets.xcassets */,
+				B093D0DE28199E0E0037F54C /* Main.storyboard */,
+				B093D0FC2819A5720037F54C /* Localizable.strings */,
+				B093D0E128199E0E0037F54C /* DFU-Tools.entitlements */,
+				B0131500281A078800F933D1 /* STPrivilegedTask.h */,
+				B0131501281A078800F933D1 /* STPrivilegedTask.m */,
+			);
+			path = "DFU-Tools";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B093D0D428199E0C0037F54C /* DFU-Tools */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B093D0E428199E0E0037F54C /* Build configuration list for PBXNativeTarget "DFU-Tools" */;
+			buildPhases = (
+				B093D0D128199E0C0037F54C /* Sources */,
+				B093D0D228199E0C0037F54C /* Frameworks */,
+				B093D0D328199E0C0037F54C /* Resources */,
+				DFA0A021A021A021A021A021 /* Build DFUToolsHelper */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DFU-Tools";
+			productName = "DFU-Tools";
+			productReference = B093D0D528199E0C0037F54C /* DFU-Tools.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B093D0CD28199E0C0037F54C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					B093D0D428199E0C0037F54C = {
+						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
+					};
+				};
+			};
+			buildConfigurationList = B093D0D028199E0C0037F54C /* Build configuration list for PBXProject "DFU-Tools" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = B093D0CC28199E0C0037F54C;
+			productRefGroup = B093D0D628199E0C0037F54C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B093D0D428199E0C0037F54C /* DFU-Tools */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B093D0D328199E0C0037F54C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B093D0DD28199E0E0037F54C /* Assets.xcassets in Resources */,
+				B093D0E028199E0E0037F54C /* Main.storyboard in Resources */,
+				B093D0FB2819A5720037F54C /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DFA0A021A021A021A021A021 /* Build DFUToolsHelper */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/DFU-ToolsSocketHelper.cpp",
+				"$(SRCROOT)/DFUToolsHelper/DFUToolsHelper.cpp",
+			);
+			name = "Build DFUToolsHelper";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/DFUToolsHelper",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -euo pipefail\ncd \"$SRCROOT\"\nHELPER_SOURCE=\"$SRCROOT/DFU-ToolsSocketHelper.cpp\"\nHELPER_TREE_SOURCE=\"$SRCROOT/DFUToolsHelper/DFUToolsHelper.cpp\"\nOUTPUT_PATH=\"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/DFUToolsHelper\"\nif [ ! -f \"$HELPER_SOURCE\" ]; then\n  echo \"error: Missing DFU-ToolsSocketHelper.cpp\"\n  exit 1\nfi\nif [ ! -f \"$HELPER_TREE_SOURCE\" ]; then\n  echo \"error: Missing DFUToolsHelper source tree at $SRCROOT/DFUToolsHelper\"\n  exit 1\nfi\nmkdir -p \"$(dirname \"$OUTPUT_PATH\")\"\nxcrun clang++ -std=c++17 -arch arm64 -mmacosx-version-min=\"$MACOSX_DEPLOYMENT_TARGET\" \"$HELPER_SOURCE\" -framework CoreFoundation -framework IOKit -o \"$OUTPUT_PATH\"\nchmod +x \"$OUTPUT_PATH\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B093D0D128199E0C0037F54C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B093D0DB28199E0C0037F54C /* ViewController.swift in Sources */,
+				B093D0D928199E0C0037F54C /* AppDelegate.swift in Sources */,
+				DFA0A004A004A004A004A004 /* AlertManager.swift in Sources */,
+				B093D0F12819A56D0037F54C /* PasswordManager.swift in Sources */,
+				B093D0F32819A56E0037F54C /* LanguageManager.swift in Sources */,
+				B093D0F52819A56F0037F54C /* DeviceManager.swift in Sources */,
+				DFA0A001A001A001A001A001 /* DeviceBindingManager.swift in Sources */,
+				B093D0F72819A5700037F54C /* USBDeviceMonitor.swift in Sources */,
+				B093D0F92819A5710037F54C /* LogManager.swift in Sources */,
+				DFA0A002A002A002A002A002 /* ProcessOutputReader.swift in Sources */,
+				DFA0A003A003A003A003A003 /* SecureDFUManager.swift in Sources */,
+				B0131502281A078800F933D1 /* STPrivilegedTask.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B093D0DE28199E0E0037F54C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B093D0DF28199E0E0037F54C /* Base */,
+				88CC6CA187294002A424BB7C /* en */,
+				3521172E2EEE4F2E00F041A2 /* zh-Hans */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B093D0FC2819A5720037F54C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B093D0FD2819A5720037F54C /* en */,
+				B093D0FE2819A5720037F54C /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B093D0E228199E0E0037F54C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B093D0E328199E0E0037F54C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		B093D0E528199E0E0037F54C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "DFU-Tools/DFU-Tools.entitlements";
+				CODE_SIGN_IDENTITY = NO;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 XRSec";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MARKETING_VERSION = 1.2.0;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xrsec.dfu-tools";
+				PRODUCT_MODULE_NAME = DFU_Tools;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B093D0E628199E0E0037F54C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "DFU-Tools/DFU-Tools.entitlements";
+				CODE_SIGN_IDENTITY = NO;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 XRSec";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MARKETING_VERSION = 1.2.0;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xrsec.dfu-tools";
+				PRODUCT_MODULE_NAME = DFU_Tools;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B093D0D028199E0C0037F54C /* Build configuration list for PBXProject "DFU-Tools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B093D0E228199E0E0037F54C /* Debug */,
+				B093D0E328199E0E0037F54C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B093D0E428199E0E0037F54C /* Build configuration list for PBXNativeTarget "DFU-Tools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B093D0E528199E0E0037F54C /* Debug */,
+				B093D0E628199E0E0037F54C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B093D0CD28199E0C0037F54C /* Project object */;
+}

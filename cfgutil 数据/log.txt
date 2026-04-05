@@ -1,0 +1,70 @@
+Mac type: J293AP
+Looking for HPM devices...
+Found: IOService:/AppleARMPE/arm-io@10F00000/AppleT810xIO/i2c0@35010000/AppleS5L8940XI2CController/hpmBusManager@6B/AppleHPMBusController/hpm0/AppleHPMARMI2C
+Connection: None
+Exiting DBMa mode... OK
+No connection detected
+
+无设备连接
+
+Mac type: J293AP
+Looking for HPM devices...
+Found: IOService:/AppleARMPE/arm-io@10F00000/AppleT810xIO/i2c0@35010000/AppleS5L8940XI2CController/hpmBusManager@6B/AppleHPMBusController/hpm0/AppleHPMARMI2C
+Connection: Sink
+Status: APP
+Unlocking... OK
+Entering DBMa mode... Status: DBMa
+Rebooting target into DFU mode... Exiting DBMa mode... OK
+Did not get a reply to VDM
+
+可能是 TYPEC 口插错了位置，M 芯片（给别人刷机的设备）目前是插靠近屏幕的第一个口，被刷机端 M 芯片第一个口，英特尔设备第二个口
+
+Mac type: J293AP
+Looking for HPM devices...
+Found: IOService:/AppleARMPE/arm-io@10F00000/AppleT810xIO/i2c0@35010000/AppleS5L8940XI2CController/hpmBusManager@6B/AppleHPMBusController/hpm0/AppleHPMARMI2C
+Connection: Sink
+Status: APP
+Unlocking... OK
+Entering DBMa mode... Status: DBMa
+Rebooting target into DFU mode... VDM failed (reply: 0x05ac8092)
+Exiting DBMa mode... OK
+VDM failed
+
+没进 DFU，提示用户设备年份需要 >= 2018 （T2 芯片）
+
+Mac type: J293AP
+Looking for HPM devices...
+Found: IOService:/AppleARMPE/arm-io@10F00000/AppleT810xIO/i2c0@35010000/AppleS5L8940XI2CController/hpmBusManager@6B/AppleHPMBusController/hpm0/AppleHPMARMI2C
+Connection: Source
+Status: APP
+Unlocking... OK
+Entering DBMa mode... Status: DBMa
+Rebooting target into DFU mode... OK
+Exiting DBMa mode... OK
+pro@prodeMacBook-Pro MacOS %
+
+成功
+
+./cfgutil list
+Type: MacBookPro17,1	ECID: 0xA184002DA001E	UDID: N/A Location: 0x100000 Name: N/A
+Type: iBridge2,21	ECID: 0x12C1822318026	UDID: N/A Location: 0x100000 Name: N/A
+Type: MacBookPro17,1	ECID: 0xA184002DA002E	UDID: N/A Location: 0x100000 Name: N/A
+Type: iBridge2,21	ECID: 0x12C1822318027	UDID: N/A Location: 0x100000 Name: N/A
+
+ ./cfgutil get isRestorable
+cfgutil: error: no devices found
+
+./cfgutil -e 0xA184002DA001E get isRestorable
+./cfgutil get isRestorable
+yes
+
+./cfgutil -e 0xA184002DA001E get deviceType
+./cfgutil get deviceType
+MacBookPro17,1 # MacBook Pro M1 13-inch
+iBridge2,21 # inter
+
+M 系列：
+$productType" >=~ ^MacBookPro17
+$productType" >=~ ^Macmini9
+$productType" >=~ ^Mac15
+$productType" >=~ ^MacBookAir10

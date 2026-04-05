@@ -1,0 +1,4 @@
+clean/*
+DFU-Tools-*.dmg
+build
+macvdmtool
