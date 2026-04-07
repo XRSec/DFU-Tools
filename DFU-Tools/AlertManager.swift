@@ -2,7 +2,7 @@
 //  AlertManager.swift
 //  DFU-Tools
 //
-//  统一提示弹窗与密码输入弹窗，交互风格尽量与 micaixin 保持接近。
+//  统一提示弹窗与密码输入弹窗。
 //
 
 import Cocoa

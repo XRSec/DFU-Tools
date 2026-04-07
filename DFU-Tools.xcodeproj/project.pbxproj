@@ -187,8 +187,9 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/DFU-ToolsSocketHelper.cpp",
-				"$(SRCROOT)/DFUToolsHelper/DFUToolsHelper.cpp",
+				"$(SRCROOT)/DFUToolsHelper/src/main.cpp",
+				"$(SRCROOT)/DFUToolsHelper/include/AppleHPMLib.h",
+				"$(SRCROOT)/DFUToolsHelper/include/ssops.h",
 			);
 			name = "Build DFUToolsHelper";
 			outputFileListPaths = (
@@ -198,7 +199,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -euo pipefail\ncd \"$SRCROOT\"\nHELPER_SOURCE=\"$SRCROOT/DFU-ToolsSocketHelper.cpp\"\nHELPER_TREE_SOURCE=\"$SRCROOT/DFUToolsHelper/DFUToolsHelper.cpp\"\nOUTPUT_PATH=\"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/DFUToolsHelper\"\nif [ ! -f \"$HELPER_SOURCE\" ]; then\n  echo \"error: Missing DFU-ToolsSocketHelper.cpp\"\n  exit 1\nfi\nif [ ! -f \"$HELPER_TREE_SOURCE\" ]; then\n  echo \"error: Missing DFUToolsHelper source tree at $SRCROOT/DFUToolsHelper\"\n  exit 1\nfi\nmkdir -p \"$(dirname \"$OUTPUT_PATH\")\"\nxcrun clang++ -std=c++17 -arch arm64 -mmacosx-version-min=\"$MACOSX_DEPLOYMENT_TARGET\" \"$HELPER_SOURCE\" -framework CoreFoundation -framework IOKit -o \"$OUTPUT_PATH\"\nchmod +x \"$OUTPUT_PATH\"\n";
+			shellScript = "set -euo pipefail\ncd \"$SRCROOT\"\nHELPER_SOURCE=\"$SRCROOT/DFUToolsHelper/src/main.cpp\"\nHELPER_INCLUDE_DIR=\"$SRCROOT/DFUToolsHelper/include\"\nOUTPUT_PATH=\"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/DFUToolsHelper\"\nif [ ! -f \"$HELPER_SOURCE\" ]; then\n  echo \"error: Missing DFUToolsHelper source tree at $SRCROOT/DFUToolsHelper\"\n  exit 1\nfi\nif [ ! -d \"$HELPER_INCLUDE_DIR\" ]; then\n  echo \"error: Missing DFUToolsHelper include directory at $HELPER_INCLUDE_DIR\"\n  exit 1\nfi\nmkdir -p \"$(dirname \"$OUTPUT_PATH\")\"\nxcrun clang++ -std=c++17 -arch arm64 -mmacosx-version-min=\"$MACOSX_DEPLOYMENT_TARGET\" -I\"$HELPER_INCLUDE_DIR\" \"$HELPER_SOURCE\" -framework CoreFoundation -framework IOKit -o \"$OUTPUT_PATH\"\nchmod +x \"$OUTPUT_PATH\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -398,7 +399,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xrsec.dfu-tools";
@@ -439,7 +440,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xrsec.dfu-tools";

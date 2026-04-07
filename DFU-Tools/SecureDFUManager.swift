@@ -3,7 +3,7 @@
 //  DFU-Tools
 //
 //  SocketXOR helper 通信管理器。父进程通过 sudo 拉起独立 helper，
-//  再使用 Unix Domain Socket + Rolling XOR 发送命令。
+//  再使用 Unix Domain Socket 发送命令请求。
 //
 
 import Foundation
@@ -45,6 +45,29 @@ enum SecureDFUCommand: String {
     case nop
     case actions
     case actionInfo
+
+    var requestCommand: String {
+        switch self {
+        case .serial:
+            return "serial"
+        case .debugusb:
+            return "debugusb"
+        case .reboot:
+            return "reboot"
+        case .rebootSerial:
+            return "reboot:serial"
+        case .rebootDebugUSB:
+            return "reboot:debugusb"
+        case .dfu:
+            return "dfu"
+        case .nop:
+            return "nop"
+        case .actions:
+            return "actions"
+        case .actionInfo:
+            return "actionInfo"
+        }
+    }
 }
 
 final class SecureDFUManager {
@@ -53,9 +76,6 @@ final class SecureDFUManager {
     private let socketNamePrefix = "dfut"
     private let sessionKeySize = 32
     private let helperResourceName = "DFUToolsHelper"
-
-    // 与 micaixin 保持同一通信机制，但换成本项目自己的通道口令。
-    private let communicationPassword = "com.xrsec.dfu_tools.socket_xor.2026"
 
     private init() {}
 
@@ -185,9 +205,10 @@ final class SecureDFUManager {
 
         try sendData(sessionKey, to: clientFd)
 
-        let requestPayload = buildRequestPayload(command: command, actionId: actionId)
+        let requestPayload = try buildRequestPayload(command: command, actionId: actionId)
         let encryptedRequest = encrypt(data: requestPayload, using: sessionKey)
         try sendData(encryptedRequest, to: clientFd)
+        shutdown(clientFd, SHUT_WR)
 
         var waitStatus: Int32 = 0
         let waitResult = waitpid(pid, &waitStatus, 0)
@@ -265,20 +286,19 @@ final class SecureDFUManager {
         }
     }
 
-    private func buildRequestPayload(command: SecureDFUCommand, actionId: UInt16?) -> Data {
-        let actionText: String
-        if let actionId {
-            actionText = "0x\(String(actionId, radix: 16, uppercase: false))"
-        } else {
-            actionText = ""
+    private func buildRequestPayload(command: SecureDFUCommand, actionId: UInt16?) throws -> Data {
+        let request: String
+
+        switch command {
+        case .actionInfo:
+            guard let actionId else {
+                throw createError("actionInfo requires actionId")
+            }
+            request = "\(command.requestCommand):0x\(String(actionId, radix: 16, uppercase: false))"
+        default:
+            request = command.requestCommand
         }
 
-        let payload = [
-            communicationPassword,
-            command.rawValue,
-            actionText,
-        ].joined(separator: "\n")
-
-        return Data(payload.utf8)
+        return Data(request.utf8)
     }
 }
